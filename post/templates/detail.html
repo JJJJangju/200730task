@@ -1,0 +1,12 @@
+<h1>{{post.title}}</h1>
+<p>{{post.created_at}}</p>
+<p>{{post.updated_at}}</p>
+<p>{{post.body}}</p>
+{% if post.image %}
+<img src="{{ post.image.url }}">
+{% endif %}
+
+
+<a href="{% url 'main' %}">돌아가기</a>
+<a href="{% url 'renew' post.id %}">수정하기</a>
+<a href="{% url 'delete' post.id %}">삭제하기</a>

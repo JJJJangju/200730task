@@ -1,0 +1,13 @@
+<a href="{% url 'new' %}">글쓰기</a>
+{% for file in main %}
+<h1> {{file.title}} </h1>
+{% if file.image %}
+<img src="{{ file.image.url }}">
+{% endif %}
+<p> {{file.body}} </p>
+<br><br>
+<p> {{file.created_at}} </p>
+<p> {{file.updated_at}} </p>
+<a href="{% url 'detail' file.id %}">... 더보기</a>
+<br><br>
+{% endfor %}
